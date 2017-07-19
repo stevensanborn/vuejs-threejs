@@ -25,7 +25,7 @@ export default {
     this.camera.lookAt(new THREE.Vector3(0,0,0));
     
     var texture = new THREE.TextureLoader().load( 'static/textures/logo.png' );
-    var geometry = new THREE.BoxBufferGeometry( .13, .13, .13);
+    var geometry = new THREE.BoxBufferGeometry( .2, .2, .2);
     var material = new THREE.MeshBasicMaterial( { map: texture } );
 
     this.mesh = new THREE.Mesh( geometry, material );
@@ -58,7 +58,8 @@ export default {
     this.controls.enableZoom = true;
     this.controls.target.set(0,0,0);
     
-
+    
+    window.addEventListener('resize', this.handleWindowResize);
 
     requestAnimationFrame( this.renderGL );
 
@@ -69,7 +70,6 @@ export default {
       
       this.controls.update();
       
-      
       // this.stats.update()
       this.mesh.rotation.x += 0.004;
       this.mesh.rotation.y += 0.001;
@@ -77,11 +77,18 @@ export default {
       // this.mesh.position =  new THREE.Vector3(0,0,0);
 
       this.renderer.render( this.scene, this.camera );
+
       this.statsFPS.update();
 
       requestAnimationFrame( this.renderGL );
       
+    },
+    handleWindowResize(event) { 
+        this.camera.aspect = window.innerWidth / window.innerHeight;
+        this.camera.updateProjectionMatrix();
+        this.renderer.setSize( window.innerWidth, window.innerHeight );
     }
+  
   },
   data () {
     return {
@@ -92,7 +99,14 @@ export default {
       controls: null,
       statsFPS: new Stats()
     }
-  }
+  },
+  
+  beforeDestroy: function () {
+    window.removeEventListener('resize', this. handleWindowResize)
+  },
+
+  
+  
 }
 </script>
 
