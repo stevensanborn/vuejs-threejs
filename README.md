@@ -1,4 +1,4 @@
-# Vue.js / Three.JS 
+# Vue.js + ThreeJS 
 
 > Example of a Vue.js  Rotating cube ThreeJS Component 
 
