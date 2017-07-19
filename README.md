@@ -1,9 +1,8 @@
 # client
 
-> A Simple Vue.js project using a ThreeJS Component
+> Example Vue.js project : Rotating cube ThreeJS Component 
 
-![Alt text](/static/screen-shot.png?raw=true "render")
-
+![Alt text](/static/screen-shot.png?raw=true "screen render of logo on cube")
 
 
 ## Build Setup
@@ -26,4 +25,9 @@ npm run build --report
 yarn run build --report
 ```
 
+
+
 For detailed explanation on how things work, checkout the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+
+
+[ThreeJS]https://github.com/mrdoob/three.js/
