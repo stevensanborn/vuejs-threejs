@@ -1,6 +1,10 @@
 # client
 
-> A Vue.js project using ThreeJS
+> A Simple Vue.js project using a ThreeJS Component
+
+![Alt text](/static/screen-shot.png?raw=true "render")
+
+
 
 ## Build Setup
 
