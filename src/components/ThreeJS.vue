@@ -24,9 +24,10 @@ export default {
     this.camera.position.set(0,0,-1);
     this.camera.lookAt(new THREE.Vector3(0,0,0));
     
-    var texture = new THREE.TextureLoader().load( 'static/textures/crate.gif' );
-    var geometry = new THREE.BoxBufferGeometry( .4, .4, .4);
+    var texture = new THREE.TextureLoader().load( 'static/textures/logo.png' );
+    var geometry = new THREE.BoxBufferGeometry( .13, .13, .13);
     var material = new THREE.MeshBasicMaterial( { map: texture } );
+
     this.mesh = new THREE.Mesh( geometry, material );
     this.mesh.position.set(0,0,0);
     console.log(this.mesh.position);
@@ -70,8 +71,8 @@ export default {
       
       
       // this.stats.update()
-      // this.mesh.rotation.x += 0.02;
-      // this.mesh.rotation.y += 0.08;
+      this.mesh.rotation.x += 0.004;
+      this.mesh.rotation.y += 0.001;
 
       // this.mesh.position =  new THREE.Vector3(0,0,0);
 
@@ -85,7 +86,7 @@ export default {
   data () {
     return {
       scene: new THREE.Scene(),
-      renderer: new THREE.WebGLRenderer(),
+      renderer: new THREE.WebGLRenderer({ antialias: true }),
       camera: null,
       mesh: null,
       controls: null,
