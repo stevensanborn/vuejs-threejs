@@ -1,6 +1,6 @@
-# client
+# Vue.js / Three.JS 
 
-> Example Vue.js project : Rotating cube ThreeJS Component 
+> Example of a Vue.js  Rotating cube ThreeJS Component 
 
 ![Alt text](/static/screen-shot.png?raw=true "screen render of logo on cube")
 
